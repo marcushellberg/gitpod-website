@@ -27,7 +27,7 @@ export const sizes = {
         lg: '1240px',
     },
     grid: {
-        maxWidth: '114rem',
+        maxWidth: '120rem',
     }
 }
 
