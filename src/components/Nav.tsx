@@ -114,7 +114,6 @@ const StyledNav = styled.nav`
     .nav__btn {
         position: relative;
         cursor: pointer;
-        background: ${colors.offWhite};
         border: none;
         z-index: 10000;
         width: 4rem;
@@ -122,8 +121,6 @@ const StyledNav = styled.nav`
         transition: all .2s;
 
         &:hover {
-            background: ${colors.offWhite};
-
             svg {
                 stroke: ${colors.lightBlue};
                 fill: ${colors.lightBlue};
