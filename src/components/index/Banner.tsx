@@ -64,7 +64,7 @@ const Styled = styled.div`
             }
 
             @media(min-width: ${sizes.breakpoints.lg}) {
-                transform: scale(1.15) translate(6rem, 6rem);
+                transform: scale(1.15) translate(6.5rem, 6rem);
 
                 &-container {
                     width: 50%;
@@ -108,7 +108,7 @@ const Banner = () => (
                             Are You <br />Ready-To-Code?
                             <span>Start Instantly. Anywhere.</span>
                         </h1>
-                        <p>Gitpod launches automated dev environments<br /> for your <strong>GitHub, GitLab or Bitbucket</strong> project with a single click.</p>
+                        <p>Gitpod launches automated dev environments for your <strong>GitHub, GitLab or Bitbucket</strong> project with a single click.</p>
                         <div className="btn-wrapper">
                             <a href="https://gitpod.io/#https://github.com/gitpod-io/spring-petclinic" className="btn btn--cta">Try Now</a>
                         </div>
