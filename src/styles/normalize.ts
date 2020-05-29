@@ -219,8 +219,8 @@ export default `
         &:hover,
         &:focus {
             color: ${colors.white};
-            background: ${colors.lightBlue};
-            border: 2px solid ${colors.lightBlue};
+            background: ${colors.text};
+            border: 2px solid ${colors.text};
         }
 
         &--big {
