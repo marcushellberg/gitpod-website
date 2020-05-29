@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { Link } from 'gatsby'
 import Screenshot from '../../resources/screenshot.png'
 import styled from '@emotion/styled'
 import { sizes } from '../../styles/variables'
@@ -44,10 +43,6 @@ const Styled = styled.div`
             @media(max-width: ${sizes.breakpoints.lg}) {
                 text-align: center;
                 margin: 5rem 0 0;
-
-                br {
-                    display: none;
-                }
             }
 
             @media(min-width: ${sizes.breakpoints.lg}) {
@@ -113,11 +108,9 @@ const Banner = () => (
                             Are You <br />Ready-To-Code?
                             <span>Start Instantly. Anywhere.</span>
                         </h1>
-                        <p>Gitpod launches ready-to-code dev environments<br /> for your GitHub or GitLab project with a single click.</p>
+                        <p>Gitpod launches automated dev environments<br /> for your <strong>GitHub, GitLab or Bitbucket</strong> project with a single click.</p>
                         <div className="btn-wrapper">
-                            <a href="https://gitpod.io/#https://github.com/gitpod-io/spring-petclinic" className="btn btn--cta">Let's Try It!</a>
-                            <br aria-hidden={true} />
-                            <Link to="/self-hosted/" className="btn">Host Yourself</Link>
+                            <a href="https://gitpod.io/#https://github.com/gitpod-io/spring-petclinic" className="btn btn--cta">Try Now</a>
                         </div>
                     </div>
                     <div className="banner__screenshot-container">
