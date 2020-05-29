@@ -47,7 +47,7 @@ const StyledTrustedBy = styled.section<{dontDisplayTheArrow?: boolean}>`
             }
 
             &:not(:last-of-type) {
-                margin-right: 3rem;
+                margin-right: 4rem;
             }
         }
     }
