@@ -12,7 +12,6 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 4rem 0;
-    background: ${colors.offWhite};
     position: relative;
 
     @media(max-width: ${sizes.breakpoints.lg}) {
@@ -47,7 +46,6 @@ const StyledNav = styled.nav`
             padding-top: 8rem;
             min-height: 95vh;
             align-items: center;
-            background: ${colors.offWhite};
             z-index: 1;
         }
 

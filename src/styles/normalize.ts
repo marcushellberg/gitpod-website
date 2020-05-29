@@ -1,5 +1,5 @@
-import { sizes, colors, borders } from "./variables";
-import DownArrow from '../resources/arrow-down.svg';
+import { sizes, colors, borders } from "./variables"
+import DownArrow from '../resources/arrow-down.svg'
 
 export default `
     /* ------------------------------------------- */

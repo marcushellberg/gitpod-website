@@ -3,7 +3,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Screenshot from '../../resources/screenshot.png'
 import styled from '@emotion/styled'
-import { colors, sizes } from '../../styles/variables'
+import { sizes } from '../../styles/variables'
+import Pattern from '../../resources/pattern.png'
+import Nav from '../Nav'
 
 const Styled = styled.div`
 
@@ -21,7 +23,9 @@ const Styled = styled.div`
         }
 
         &-container {
-            background: ${colors.offWhite};
+            background: url(${Pattern});
+            background-size: cover;
+            background-position: center;
         }
 
         &__text-box {
@@ -101,6 +105,7 @@ const Styled = styled.div`
 const Banner = () => (
     <Styled>
         <div className="banner-container">
+            <Nav />
             <div className="row">
                 <header role="banner" className="banner">
                     <div className="banner__text-box">
