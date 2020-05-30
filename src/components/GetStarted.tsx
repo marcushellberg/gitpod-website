@@ -12,6 +12,7 @@ const StyledGetStarted = styled.div`
     /* ------------------------------------------- */
 
     .get-started {
+        text-align: center;
 
         h3 {
             font-weight: 400;
@@ -20,8 +21,8 @@ const StyledGetStarted = styled.div`
         &__prefix {
             display: flex;
             margin-bottom: 12rem;
-            box-shadow: ${shadows.light};
-            border: ${borders.light};
+            text-align: left;
+            border: ${borders.light2};
 
             @media(max-width: ${sizes.breakpoints.lg}) {
                 flex-direction: column;
@@ -234,19 +235,19 @@ class GetStarted extends React.Component {
     handleChange = (e: any) => {
         const val = e.target.value
         this.handleValidation(val)
-        this.setState({val})
+        this.setState({ val })
     }
 
     handleValidation = (val: string) => {
         try {
-            if ( !( val.includes('github.com') || val.includes('gitlab.com')) ) {
-                this.setState({message: 'Please Enter a valid Github or GitLab repo Url!'})
+            if (!(val.includes('github.com') || val.includes('gitlab.com'))) {
+                this.setState({ message: 'Please Enter a valid Github or GitLab repo Url!' })
             }
             else {
-                this.setState({message: ''})
+                this.setState({ message: '' })
             }
         }
-        catch(e) {
+        catch (e) {
             console.log(e.message)
         }
     }
@@ -264,18 +265,18 @@ class GetStarted extends React.Component {
         return (
             <StyledGetStarted className="row">
                 <section className="get-started" id="get-started">
-                    <h2>Get Started</h2>
+                    <h2><strong>Get Started</strong></h2>
                     <p>Free for Open Source and 30 days free trial for private repositories.</p>
 
                     <div className="get-started__prefix">
                         <div className="get-started__prefix-text-container">
-                            <h3 className="get-started__prefix-text">Prefix any GitHub or GitLab<br aria-hidden={true} />URL with <span className="text-with-galaxy-bg">gitpod.io/#</span></h3>
+                            <h3 className="get-started__prefix-text">Prefix any GitHub or GitLab<br aria-hidden={true} />URL with <strong>gitpod.io/#</strong></h3>
                         </div>
                         <label htmlFor="url" className="get-started__prefix-input-container">
                             <div className="get-started__prefix-input">
                                 <div>
                                     <span>
-                                        <img alt="Gitpod Logo" src={GitpodGrey}/>
+                                        <img alt="Gitpod Logo" src={GitpodGrey} />
                                         gitpod.io/#
                                     </span>
                                     <input
@@ -288,13 +289,13 @@ class GetStarted extends React.Component {
                                 <a
                                     href={`https://gitpod.io#${val}`}
                                     target="_blank"
-                                    style={ message ? {pointerEvents: "none"} : {} }
-                                    tabIndex={ message ? -1 : 0 }
+                                    style={message ? { pointerEvents: "none" } : {}}
+                                    tabIndex={message ? -1 : 0}
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="#4D4D4D" width="29.524" height="20.157"><g data-name="Gruppe 615" transform="translate(1.5 2.117)"><path data-name="Linie 99" fill="none" strokeLinecap="round" strokeWidth="2" d="M0 7.684h25.253"/><path data-name="Pfad 35" d="M18.984 0l7.038 7.972-7.038 7.951" fill="none" strokeLinecap="round" strokeWidth="2"/></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" stroke="#4D4D4D" width="29.524" height="20.157"><g data-name="Gruppe 615" transform="translate(1.5 2.117)"><path data-name="Linie 99" fill="none" strokeLinecap="round" strokeWidth="2" d="M0 7.684h25.253" /><path data-name="Pfad 35" d="M18.984 0l7.038 7.972-7.038 7.951" fill="none" strokeLinecap="round" strokeWidth="2" /></g></svg>
                                 </a>
                             </div>
-                            <p>{ message ? <span style={{color: '#FF4136 '}}>{message}</span> : 'Enter your GitHub or GitLab URL' }</p>
+                            <p>{message ? <span style={{ color: '#FF4136 ' }}>{message}</span> : 'Enter your GitHub or GitLab URL'}</p>
                         </label>
                     </div>
 
@@ -306,7 +307,7 @@ class GetStarted extends React.Component {
                                 (project, i) => (
                                     <Project
                                         key={i}
-                                        image={<object role="presentation" tabIndex={-1} data={project.image}/>}
+                                        image={<object role="presentation" tabIndex={-1} data={project.image} />}
                                         title={project.title}
                                         href={project.href}
                                     />

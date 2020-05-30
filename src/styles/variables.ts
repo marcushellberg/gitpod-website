@@ -10,6 +10,7 @@ export const colors = {
     offWhite1: '#BCBCBC',
     offWhite2: '#e5e5e5',
     offWhite3: '#dbdbdb',
+    offWhite4: '#e6e6e6'
 }
 
 export const sizes = {
@@ -40,5 +41,6 @@ export const shadows = {
 export const borders = {
     light: '1px solid rgba(0,0,0, .08)',
     light1: '1px solid rgba(0,0,0, .2)',
+    light2: `2px solid ${colors.offWhite4}`,
     bold: `4px solid ${colors.offWhite3}`
 }

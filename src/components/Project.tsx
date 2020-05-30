@@ -1,15 +1,15 @@
 import React from 'react'
 
 import styled from '@emotion/styled'
-import { colors, shadows, sizes } from '../styles/variables'
+import { colors, sizes, borders } from '../styles/variables'
 
 const StyledProject = styled.div`
     padding: 2rem;
     text-align: center;
     font-size: 90%;
-    background: ${colors.offWhite};
-    box-shadow: ${shadows.light};
     font-weight: 600;
+    border: ${borders.light2};
+    background: ${colors.offWhite};
 
     @media(max-width: ${sizes.breakpoints.lg}) {
         max-width: 24rem;
