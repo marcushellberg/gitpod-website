@@ -1,100 +1,28 @@
 import React from 'react'
 
 import styled from '@emotion/styled'
-import { colors, sizes } from '../../styles/variables'
-import OpenSourceImg from '../../resources/open-source.png'
+import OSSBg from '../../resources/section-oss-bg.png'
 
-const Styled = styled.div`
-    .open-source {
-        display: flex;
-        padding-top: 0;
+const Styled = styled.section`
+    background: url(${OSSBg});
+    background-size: cover;
 
-        @media(max-width: 1040px) {
-            flex-direction: column;
-        }
+    h2 + p {
+        margin: 0;
+    }
 
-        @media(max-width: ${sizes.breakpoints.sm}) {
-            text-align: center;
-        }
-
-        &__img {
-            width: 100%;
-            max-height: 342px;
-            max-width: 596px;
-
-            @media(max-width: 1040px) {
-                margin-bottom: 4rem;
-                margin-left: -1.5rem;
-            }
-
-            @media(max-width: ${sizes.breakpoints.sm}) {
-                margin-left: 0;
-            }
-
-            &-container {
-                display: flex;
-                align-items: center;
-                flex: 0 0 55%;
-            }
-        }
-
-        &__text {
-            
-            &-container {
-                display: flex;
-                align-items: center;
-                flex: 1;
-                max-width: 60rem;
-
-                @media(min-width: 1040px) {
-                    padding: 0 0 0 6rem; 
-                }
-            }
-
-            p {
-                margin-bottom: 2rem;
-            }
-
-            @media(max-width: ${sizes.breakpoints.lg}) {
-                br {
-                    display: none;
-                }
-            }
-        }
-
-        h2 {
-            color: ${colors.textDark};
-            margin-bottom: 6rem;
-            font-weight: 600;
-
-            @media(min-width: ${sizes.breakpoints.md}) {
-                font-size: 200%;
-            }
-        }
+    div {
+        max-width: 660px;
     }
 `
 
 const OpenSource = () => (
     <Styled>
-        <div className="grey-container">
-            <section>
-                <div className="row">
-                    <div className="open-source">
-                        <div className="open-source__img-container">
-                            <img className="open-source__img" src={OpenSourceImg} />
-                        </div>
-                        <div className="open-source__text-container">
-                            <div className="open-source__text">
-                                <h3>Giving Back to Open-Source!</h3>
-                                <p>Gitpod is built on open-source and wouldn’t exist without it.</p> 
-                                <p>Therefore, Gitpod is free for open source, and we have created contribute.dev, which lists ready-to-code open source projects. Start contributing now!</p> 
-                                <p>Find your next project!</p>
-                            <a href="https://contribute.dev" className="btn btn--cta" target="_blank" rel="noopener">Contribute.dev</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div className="row">
+            <div>
+                <h2>Giving Back to Open-Source!</h2>
+                <p>Gitpod is built on open-source and wouldn’t exist without it. We’re happy to give something back by supporting the open-source community with a free Open-Source Plan.</p>
+            </div>
         </div>
     </Styled>
 )
