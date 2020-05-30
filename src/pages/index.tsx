@@ -1,9 +1,7 @@
 import React from 'react'
 
-
 import IndexLayout from '../layouts/index'
 import Banner from '../components/index/Banner'
-import Intro from '../components/index/Intro'
 import WhyGitpod from '../components/index/WhyGitpod'
 import Details from '../components/Details'
 import TrustedBy from '../components/TrustedBy'
@@ -27,6 +25,7 @@ import IntelLogo from '../resources/intel.svg'
 import Testimonials from '../components/Testimonials'
 import GetStarted from '../components/GetStarted'
 import OpenSource from '../components/index/OpenSource'
+import HighlySecure from '../components/index/HighlySecure'
 
 
 const IndexPage: React.SFC<{}> = () => (
@@ -143,6 +142,8 @@ const IndexPage: React.SFC<{}> = () => (
         <WhyGitpod />
         
         <Testimonials />
+
+        <HighlySecure />
 
         <GetStarted />
 
