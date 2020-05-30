@@ -107,3 +107,88 @@ class ReadyToCode extends React.Component {
 }
 
 export default ReadyToCode
+
+/* 
+.toggle {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    color: ${colors.textLight};
+    background: ${colors.offWhite2};
+    border: none;
+
+    @media(max-width: 1240px) {
+        font-size: 1.4rem;
+        padding: .8rem 1rem;
+    }
+
+    &--active {
+        color: ${colors.white};
+        background: url("https://www.gitpod.io/galaxy.jpg");
+        background-size: cover;
+        background-position: top;
+    }
+}
+
+&--1 {
+
+                transform: translateY(-.8rem);
+
+                @media(min-width: 880px) {
+                    height: auto;
+                }
+
+                @media(max-width: 800px) {
+                    transform: none;
+                    margin-bottom: 3rem;
+                }
+                
+                @media(min-width: 800px) {
+                    height: 440px;
+                }
+
+                @media(max-width: 700px) {
+                    height: 500px;
+                    margin-bottom: -7rem;
+                }
+
+                @media(max-width: 560px) {
+                    height: 33rem;
+                    margin-bottom: 0;
+                }
+
+                @media(max-height: 500px) {
+                    height: 29rem;
+                }
+
+                @media(max-width: ${sizes.breakpoints.sm}) {
+                    height: 25rem;
+                }
+            }
+
+            &--full-dev-env {
+                transform: translate(-2rem);
+
+                @media(max-width: 530px) {
+                    transform: translate(-1.3rem);
+                }
+            }
+
+            &--3 {
+                @media(min-width: ${sizes.breakpoints.lg}) {
+                    transform: translateY(13.5rem) scale(.93) translateX(-2rem);
+                }
+
+                @media(min-width: ${sizes.breakpoints.md}) {
+                    transform: translateY(13.5rem) scale(0.93) translateX(-2rem);
+                }
+
+                @media(max-width: ${sizes.breakpoints.md}) {
+                    transform: translateY(10rem);
+                }
+
+                @media(max-width: ${sizes.breakpoints.sm}) {
+                    transform: translateY(6rem);
+                }
+            }
+*/

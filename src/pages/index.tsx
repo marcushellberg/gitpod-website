@@ -140,8 +140,6 @@ const IndexPage: React.SFC<{}> = () => (
             ]}
         />
 
-        <Intro />
-
         <WhyGitpod />
         
         <Testimonials />
