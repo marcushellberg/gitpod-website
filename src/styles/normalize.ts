@@ -1,5 +1,6 @@
 import { sizes, colors, borders } from "./variables"
 import DownArrow from '../resources/arrow-down.svg'
+import Pattern from '../resources/pattern.png'
 
 export default `
     /* ------------------------------------------- */
@@ -443,6 +444,70 @@ export default `
         width: 1px;
         height: 1px;
         overflow: hidden;
+    }
+
+    .pattern {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: 0;
+            top: -15rem;
+            left: -10rem;
+            right: -10rem;
+            height: calc(100% + 15rem);
+            z-index: -100;
+            background: url(${Pattern});
+            background-position: center;
+            background-size: cover;
+
+            @media(min-width: 1340px) {
+                right: -15rem;
+                left: -15rem;
+            }
+
+            @media(min-width: 1420px) {
+                right: -20rem;
+                left: -20rem;
+            }
+
+            @media(min-width: 1520px) {
+                right: -30rem;
+                left: -30rem;
+            }
+
+            @media(min-width: 1720px) {
+                right: -40rem;
+                left: -40rem;
+            }
+
+            @media(min-width: 1890px) {
+                right: -50rem;
+                left: -50rem;
+            }
+
+            @media(min-width: 2000px) {
+                right: -65rem;
+                left: -65rem;
+            }
+
+            @media(min-width: 2100px) {
+                right: -75rem;
+                left: -75rem;
+            }
+
+            @media(min-width: 2300px) {
+                left: -85rem;
+                right: -85rem;
+            }
+
+            @media(min-width: 2400px) {
+                left: -95rem;
+                right: -95rem;
+            }
+        }
     }
 
 `

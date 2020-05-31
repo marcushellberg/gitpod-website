@@ -3,14 +3,12 @@ import React from 'react'
 import Screenshot from '../../resources/screenshot.png'
 import styled from '@emotion/styled'
 import { sizes } from '../../styles/variables'
-import Pattern from '../../resources/pattern.png'
-import Nav from '../Nav'
 
 const Styled = styled.div`
-
     .banner {
         display: flex;
         padding-bottom: 16rem;
+        position: relative;
 
         @media(min-width: ${sizes.breakpoints.lg}) {
             padding-top: 5rem;
@@ -19,12 +17,6 @@ const Styled = styled.div`
         @media(max-width: ${sizes.breakpoints.lg}) {
             flex-direction: column;
             padding-bottom: 5rem;
-        }
-
-        &-container {
-            background: url(${Pattern});
-            background-size: cover;
-            background-position: center;
         }
 
         &__text-box {
@@ -99,10 +91,8 @@ const Styled = styled.div`
 
 const Banner = () => (
     <Styled>
-        <div className="banner-container">
-            <Nav />
             <div className="row">
-                <header role="banner" className="banner">
+                <header role="banner" className="banner pattern">
                     <div className="banner__text-box">
                         <h1>
                             Are You <br />Ready-To-Code?
@@ -118,7 +108,6 @@ const Banner = () => (
                     </div>
                 </header>
             </div>
-        </div>
     </Styled>
 )
 

@@ -88,6 +88,7 @@ class IndexLayout extends React.Component<{ title?: string, canonical?: string, 
 
                     <meta name="google-site-verification" content="NBio3hCkfn2FKJpqZritJpXuyKo54noPGZzWsjDIp-M" />
                     </Helmet>
+                    <Nav />
                     <LayoutMain>
                         <CookieConsent buttonClasses="primary"
                             containerClasses="consent"
