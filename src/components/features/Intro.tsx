@@ -3,7 +3,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import FeatureBox from './FeatureBox'
 import { featuresCardsData } from '../../utils/features'
-import IceStick from '../../resources/ice-stick.svg'
 import { sizes } from '../../styles/variables'
 
 const Styled = styled.div`
@@ -18,17 +17,19 @@ const Styled = styled.div`
 
         h1 {
             text-align: center;
+            margin-top: 16rem;
         }
 
         .features {
             display: grid;
-            grid-row-gap: 3rem;
-            grid-column-gap: 2rem;
+            grid-gap: 2rem;
             grid-template-columns: repeat(5, 1fr);
             justify-items: center;
             align-items: center;
             margin-top: 4rem;
             position: relative;
+            max-width: 900px;
+            margin: 6rem auto 0; 
 
             @media(max-width: ${sizes.breakpoints.lg}) {
                 grid-template-columns: repeat(5, 1fr);
@@ -49,17 +50,10 @@ const Styled = styled.div`
 
             & > div {
 
+                min-width: 14rem;
+
                 @media(min-width: 961px) {
                     min-width: 17rem;
-                }
-
-                @media(max-width: 960px) {
-                    min-width: 13rem;
-                    max-width: 18rem;
-                }
-
-                @media(min-width: ${sizes.breakpoints.lg}) {
-                    min-width: 19rem;
                 }
  
                 @media(min-width: 961px) {
@@ -74,8 +68,7 @@ const Styled = styled.div`
 
 const Intro = () => (
    <Styled>
-        <section className="intro" id="top">
-        <object role="presentation" tabIndex={-1} data={IceStick} className="ice-stick" />
+        <section className="intro pattern" id="top">
         <h1>Features</h1>
         <div className="features">
             {
