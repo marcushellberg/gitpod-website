@@ -3,7 +3,6 @@ import React from 'react'
 import IndexLayout from '../layouts/index'
 import Banner from '../components/index/Banner'
 import WhyGitpod from '../components/index/WhyGitpod'
-import Details from '../components/Details'
 import TrustedBy from '../components/TrustedBy'
 import AppliToolsLogo from '../resources/aplitools.svg'
 import Gatsby from '../resources/gatsby.svg'
@@ -26,6 +25,7 @@ import Testimonials from '../components/Testimonials'
 import GetStarted from '../components/GetStarted'
 import OpenSource from '../components/index/OpenSource'
 import HighlySecure from '../components/index/HighlySecure'
+import MoreInfo from '../components/MoreInfo'
 
 
 const IndexPage: React.SFC<{}> = () => (
@@ -148,13 +148,9 @@ const IndexPage: React.SFC<{}> = () => (
         <GetStarted />
 
         <OpenSource />
-
-        <Details
-            title="Explore Gitpod"
-            text="Learn about collaboration, workspace snapshots, supported programming languages, and much more."
-            anchors={[{ href: '/features/', text: 'See Features' }, { href: '/blog/', text: 'See Blog' }]}
-        />
-
+        
+        <MoreInfo />
+        
     </IndexLayout>
 )
 

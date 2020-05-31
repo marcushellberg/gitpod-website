@@ -1,7 +1,9 @@
 import React from 'react'
 
 import styled from '@emotion/styled'
-import { borders, sizes } from '../../styles/variables'
+import { borders, sizes } from '../styles/variables'
+import { Link } from 'gatsby'
+import MapGrey from '../resources/map-grey.svg'
 
 const StyledPricingLinks = styled.section`
     max-width: 850px;
@@ -52,27 +54,51 @@ const StyledPricingLinks = styled.section`
 `
 
 export interface PricingLinksProps {
-    img: JSX.Element
-    title: JSX.Element
-    text: JSX.Element
-    links: JSX.Element
+    img?: JSX.Element
+    title?: JSX.Element
+    text?: JSX.Element
+    links?: JSX.Element
 }
 
-const PricingLinks = ({ img, title, text, links }: PricingLinksProps) => (
+const PricingLinks = ({
+    img,
+    title,
+    text,
+    links
+}: PricingLinksProps) => {
+    let Img = img
+    let Title = title
+    let Text = text
+    let Links = links
+    if(!(img && title && text && links)) {
+        Img = <img src={MapGrey} alt="Explore Gitpod" />
+        Title = <><strong>Explore</strong> Gitpod</>
+        Text = <>
+                Learn about collaboration, shared workspace and snapshots, supported programming languages, and much more.
+              </>
+        Links = <>
+                <Link to="/features/" className="btn btn--cta">See Features</Link>
+                <Link to="/blog/" className="btn">See Blog</Link>
+                </>
+        console.log(Img, Title, Text, Links)
+    }
+    return (
     <div className="row">
         <StyledPricingLinks>
-            { img }
+            {Img}
             <div>
-                <h2>{title}</h2>
+                <h2>{Title}</h2>
                 <p>
-                   {text} 
+                    {Text}
                 </p>
                 <span className="btn-wrapper">
-                    {links}
+                    {Links}
                 </span>
             </div>
         </StyledPricingLinks>
     </div>
-)
+    )
+}
 
 export default PricingLinks
+
