@@ -34,7 +34,7 @@ export const features = [
     },
     {
         title: "Smooth Integration",
-        paragraphs: ['All Gitpod needs is a Kubernetes cluster.', 'It enables user authentication and integration with your GitHub Enterprise, GitLab, or Bitbucket.', <>Please <Link to="/contact/"  state={{ subject: 'I have a question regarding Gitpod Enterprise' }}>contact us</Link> for further customizations.</>],
+        paragraphs: ['All Gitpod needs is a Kubernetes cluster.', 'It enables user authentication and integration with your GitHub Enterprise, GitLab, or Bitbucket.', <>Please <Link to="/contact/" state={{ subject: 'I have a question regarding Gitpod Enterprise' }}>contact us</Link> for further customizations.</>],
         logos: ['Layer', 'Github', 'Gitlab', 'Git']
     },
     // {
@@ -46,22 +46,22 @@ export const features = [
 ]
 
 const EnterprisePage: React.SFC<{}> = () => (
-    <IndexLayout 
-        canonical='/enterprise/' 
-        title="Enterprise" 
+    <IndexLayout
+        canonical='/enterprise/'
+        title="Enterprise"
         description="Adding Gitpod to your development tools means less waiting, faster onboarding, faster development cycles, higher code quality, and a smooth consistent workflow."
     >
+
+        <Banner
+            subtitle="Gitpod Enterprise"
+            title={<h1>Unleash Developer Productivity</h1>}
+            paragraph="Adding Gitpod to your development tools means less waiting, faster onboarding, faster development cycles, higher code quality, and a smooth consistent workflow."
+            linkPath="/enterprise/#enterprise"
+            linkText="Choose your Solution"
+            img={<object role="presentation" tabIndex={-1} data={Planet} />}
+        />
+        
         <div className="grey-container">
-
-            <Banner
-                subtitle="Gitpod Enterprise"
-                title={<h1>Unleash Developer Productivity</h1>}
-                paragraph="Adding Gitpod to your development tools means less waiting, faster onboarding, faster development cycles, higher code quality, and a smooth consistent workflow."
-                linkPath="/enterprise/#enterprise"
-                linkText="Choose your Solution"
-                img={<object role="presentation" tabIndex={-1} data={Planet} />}
-            />
-
             <Features title="Stay in the Flow and Scale Up Your Productivity">
                 {
                     features.map((f, i) => (

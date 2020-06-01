@@ -186,23 +186,19 @@ const StyledAboutPage = styled.div`
 const AboutPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/about/' title="About">
         <StyledAboutPage>
-            <div className="grey-container">
+            {/* ----- Banner ----- */}
 
-                {/* ----- Banner ----- */}
-
-                <div className="row">
-                    <header role="banner" className="banner">
-                        <div className="banner__img-container">
-                            <img alt="2 Right Arrows" src={DoubleArrows} className="banner__img"/>
-                        </div>
-                        <div className="banner__text-box">
-                            <h3>About</h3>
-                            <h1>Type<strong>Fox</strong></h1>
-                            <p>Gitpod is developed by TypeFox, a team<br />of developer tool specialists and longtime<br />open-source contributors.</p>
-                        </div>
-                    </header>
-                </div>
-
+            <div className="row pattern">
+                <header role="banner" className="banner">
+                    <div className="banner__img-container">
+                        <img alt="2 Right Arrows" src={DoubleArrows} className="banner__img"/>
+                    </div>
+                    <div className="banner__text-box">
+                        <h3>About</h3>
+                        <h1>Type<strong>Fox</strong></h1>
+                        <p>Gitpod is developed by TypeFox, a team<br />of developer tool specialists and longtime<br />open-source contributors.</p>
+                    </div>
+                </header>
             </div>
 
             {/* ----- By Developers for Developers ----- */}

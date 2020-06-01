@@ -146,7 +146,7 @@ const StyledBlogTemplate = styled.div`
 const BlogTemplate: React.SFC<BlogTemplateProps> = ({ data }) => {
   const authors = parseAuthors(data.markdownRemark.frontmatter.author);
   return (
-  <IndexLayout canonical={data.markdownRemark.frontmatter.url || `${data.markdownRemark.fields.slug.toLowerCase()}`}>
+  <IndexLayout canonical={data.markdownRemark.frontmatter.url || `${data.markdownRemark.fields.slug.toLowerCase()}`} navShouldBeGrey={true}>
       <Helmet>
         <title>{data.markdownRemark.frontmatter.title}</title>
         <meta name="description" content={data.markdownRemark.frontmatter.subtitle} />

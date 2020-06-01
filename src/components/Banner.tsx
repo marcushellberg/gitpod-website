@@ -70,7 +70,7 @@ interface BannerProps {
 }
 
 const Banner: React.SFC<BannerProps> = ({subtitle, title, paragraph, linkPath, linkText, img, children}) => (
-     <div className="row">
+     <div className="row pattern">
         <StyledBanner role="banner" className="banner">
             <div className="banner__text">
                 <h3 className="sub">{subtitle}</h3>

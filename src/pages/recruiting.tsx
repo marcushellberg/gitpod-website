@@ -20,7 +20,6 @@ import { Link } from 'gatsby'
 
 const RecrutingPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/recruiting/' title="Recruiting">
-        <div className="grey-container">
 
             <Banner
                 subtitle="Gitpod Recruiting"
@@ -29,7 +28,8 @@ const RecrutingPage: React.SFC<{}> = () => (
                 linkText="Choose your Solution"
                 img={<object role="presentation" tabIndex={-1} data={Recruiting}/>}
             />
-
+            
+            <div className="grey-container">
             <Features title="Provide Coding Exercises Within Seconds">
                 {
                     features.map((f, i) => (

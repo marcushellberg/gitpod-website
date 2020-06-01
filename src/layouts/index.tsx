@@ -23,7 +23,7 @@ type StaticQueryProps = {
   }
 }
 
-class IndexLayout extends React.Component<{ title?: string, canonical?: string, description?: string }, {}> {
+class IndexLayout extends React.Component<{ title?: string, canonical?: string, description?: string, navShouldBeGrey?: boolean }, {}> {
 
     handleFirstTab = (e :any) => {
         if (e.keyCode === 9) { // the "I am a keyboard user" key
@@ -46,7 +46,7 @@ class IndexLayout extends React.Component<{ title?: string, canonical?: string, 
     }
 
     render() {
-        const { title, canonical, description, children } = this.props
+        const { title, canonical, description, navShouldBeGrey, children } = this.props
 
         return (
             <StaticQuery
@@ -88,7 +88,7 @@ class IndexLayout extends React.Component<{ title?: string, canonical?: string, 
 
                     <meta name="google-site-verification" content="NBio3hCkfn2FKJpqZritJpXuyKo54noPGZzWsjDIp-M" />
                     </Helmet>
-                    <Nav />
+                    <Nav shouldHaveGreyBackground={navShouldBeGrey} />
                     <LayoutMain>
                         <CookieConsent buttonClasses="primary"
                             containerClasses="consent"

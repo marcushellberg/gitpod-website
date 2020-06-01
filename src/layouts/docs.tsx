@@ -206,7 +206,7 @@ interface DocsLayoutProps {
 }
 
 const DocsLayout: React.SFC<DocsLayoutProps> = ({ canonical, title, body, arrows }) => (
-    <IndexLayout canonical={canonical} title={title} description="The documentation site of Gitpod, the online IDE for GitHub and GitLab.">
+    <IndexLayout canonical={canonical} title={title} description="The documentation site of Gitpod, the online IDE for GitHub and GitLab." navShouldBeGrey={true}>
         <StyledDocsLayout>
             <div className="grey-container">
                 <div className="row">

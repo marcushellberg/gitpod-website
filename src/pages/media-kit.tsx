@@ -98,7 +98,7 @@ const resources: {
 
 const MediaKitPage: React.SFC<{}> = () => (
     <IndexLayout canonical="/media-kit/" title="Media Kit">
-        <StyledMediaKitPage className="grey-container">
+        <StyledMediaKitPage className="pattern">
             <div className="row">
                 <h1>Media Kit</h1>
                 <div className="resources">

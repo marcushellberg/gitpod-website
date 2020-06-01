@@ -20,7 +20,6 @@ import { Link } from 'gatsby'
 
 const VendorPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/vendor/' title="Vendor">
-        <div className="grey-container">
 
             <Banner
                 subtitle="Gitpod Vendor"
@@ -29,7 +28,8 @@ const VendorPage: React.SFC<{}> = () => (
                 linkText="Choose your Solution"
                 img={<object role="presentation" tabIndex={-1} data={Vendor}/>}
             />
-
+            
+            <div className="grey-container">
             <Features title="Highlight Your Developer Products">
                 {
                     features.map((f, i) => (
