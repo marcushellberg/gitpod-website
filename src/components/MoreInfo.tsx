@@ -70,33 +70,32 @@ const PricingLinks = ({
     let Title = title
     let Text = text
     let Links = links
-    if(!(img && title && text && links)) {
+    if (!(img && title && text && links)) {
         Img = <img src={MapGrey} alt="Explore Gitpod" />
         Title = <><strong>Explore</strong> Gitpod</>
-        Text = <>
-                Learn about collaboration, shared workspace and snapshots, supported programming languages, and much more.
-              </>
-        Links = <>
-                <Link to="/features/" className="btn btn--cta">See Features</Link>
-                <Link to="/blog/" className="btn">See Blog</Link>
-                </>
-        console.log(Img, Title, Text, Links)
+        Text = (<>
+            Learn about collaboration, shared workspace and snapshots, supported programming languages, and much more.
+        </>)
+        Links = (<>
+            <Link to="/features/" className="btn btn--cta">See Features</Link>
+            <Link to="/blog/" className="btn">See Blog</Link>
+        </>)
     }
     return (
-    <div className="row">
-        <StyledPricingLinks>
-            {Img}
-            <div>
-                <h2>{Title}</h2>
-                <p>
-                    {Text}
-                </p>
-                <span className="btn-wrapper">
-                    {Links}
-                </span>
-            </div>
-        </StyledPricingLinks>
-    </div>
+        <div className="row">
+            <StyledPricingLinks>
+                {Img}
+                <div>
+                    <h2>{Title}</h2>
+                    <p>
+                        {Text}
+                    </p>
+                    <span className="btn-wrapper">
+                        {Links}
+                    </span>
+                </div>
+            </StyledPricingLinks>
+        </div>
     )
 }
 

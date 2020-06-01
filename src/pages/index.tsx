@@ -2,8 +2,14 @@ import React from 'react'
 
 import IndexLayout from '../layouts/index'
 import Banner from '../components/index/Banner'
-import WhyGitpod from '../components/index/WhyGitpod'
 import TrustedBy from '../components/TrustedBy'
+import FeatureCards from '../components/FeatureCards'
+import Testimonials from '../components/Testimonials'
+import GetStarted from '../components/GetStarted'
+import OpenSource from '../components/index/OpenSource'
+import HighlySecure from '../components/index/HighlySecure'
+import MoreInfo from '../components/MoreInfo'
+
 import AppliToolsLogo from '../resources/aplitools.svg'
 import Gatsby from '../resources/gatsby.svg'
 import FreeCodeCamp from '../resources/freecodecamp.svg'
@@ -21,12 +27,7 @@ import UberLogo from '../resources/uber.svg'
 import AmazonLogo from '../resources/amazon.svg'
 import IntelLogo from '../resources/intel.svg'
 
-import Testimonials from '../components/Testimonials'
-import GetStarted from '../components/GetStarted'
-import OpenSource from '../components/index/OpenSource'
-import HighlySecure from '../components/index/HighlySecure'
-import MoreInfo from '../components/MoreInfo'
-
+import { features } from '../utils/index'
 
 const IndexPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/'>
@@ -139,7 +140,9 @@ const IndexPage: React.SFC<{}> = () => (
             ]}
         />
 
-        <WhyGitpod />
+        <FeatureCards 
+            features={features}
+        />
         
         <Testimonials />
 
