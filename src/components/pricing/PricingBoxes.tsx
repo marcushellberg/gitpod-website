@@ -190,8 +190,8 @@ export interface PricingBoxesProps {
 
 const PricingBoxes = ({ isRendered, changeIsRendered }: PricingBoxesProps) => {
     return <Styled>
-        <section className="pricing">
-            <div className="grey-container container--1">
+        <section className="pricing pattern">
+            <div className="container--1">
                 <div className="row">
                     <h1 className="sub">Plans &amp; <strong>Pricing</strong></h1>
                     <Tabs

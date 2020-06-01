@@ -451,6 +451,12 @@ export default `
         overflow: hidden;
     }
 
+    .pattern-bg {
+        background: url(${Pattern});
+        background-position: center;
+        background-size: cover;
+    }
+
     .pattern {
         position: relative;
 

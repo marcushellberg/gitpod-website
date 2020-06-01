@@ -47,7 +47,7 @@ const PricingPage = () => {
                 isRendered={isRendered}
                 changeIsRendered={changeIsRendered}
             />
-            <div className="grey-container">
+            <div className="pattern-bg">
                 <div className="row">
                     { isRendered ? <SelfHostedFAQs /> : <Plans /> }
                 </div>
