@@ -116,17 +116,22 @@ const Styled = styled.div<{direction?: string}>`
             }
         }
     }
+
+    .buttons {
+        margin-top: 6rem;
+    }
 `
 
 export interface FeatureCardProps {
     src: string
     alt: string
     title: string | JSX.Element
-    text: string | JSX.Element,
+    text: string | JSX.Element
     direction?: string
+    buttons?: JSX.Element 
 }
 
-const FeatureCard = ({ src, alt, title, text, direction }: FeatureCardProps) => (
+const FeatureCard = ({ src, alt, title, text, direction, buttons }: FeatureCardProps) => (
     <Styled className="row" direction={direction}>
         <div className="img-container">
             <img 
@@ -137,6 +142,7 @@ const FeatureCard = ({ src, alt, title, text, direction }: FeatureCardProps) => 
         <div className="text">
             <h2>{title}</h2>
             {text}
+            { buttons ? <div className="buttons btn-wrapper">{buttons}</div> : null }
         </div>
     </Styled>
 )

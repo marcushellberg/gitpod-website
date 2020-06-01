@@ -2,9 +2,11 @@ import React from 'react'
 
 import IndexLayout from '../layouts'
 import ScrollToTopButton from '../components/ScrollToTopButton'
-import StartFree from '../components/features/StartFree'
 import Intro from '../components/features/Intro'
-import FeaturesList from '../components/features/FeaturesList'
+import FeatureCards from '../components/FeatureCards'
+import StartFree from '../components/features/StartFree'
+
+import { features } from '../utils/features'
 
 
 const FeaturesPage: React.SFC<{}> = () => (
@@ -16,8 +18,11 @@ const FeaturesPage: React.SFC<{}> = () => (
         <div className="row">
             <ScrollToTopButton />
             <Intro />
-            <FeaturesList />
         </div>
+
+        <FeatureCards 
+            features={features}
+        />
 
         <StartFree />
     </IndexLayout>

@@ -6,13 +6,14 @@ import IconParallel from '../resources/icon-parallel.svg'
 import IconLanguage from '../resources/icon-language.svg'
 import VSCodeExtensions from '../resources/vscode-extensions.png'
 import LinuxTerminal from '../resources/linux-terminal.png'
-import PrebuiltWorkspaces from '../resources/prebuilt-workspaces.svg'
+import PrebuiltWorkspaces from '../resources/prebuilt-workspaces.png'
 import ParallelWorkspaces from '../resources/parallel-workspaces.png'
 import CodeReview from '../resources/code-review.png'
 import SupportedLanguages from '../resources/supported-languages.svg'
 import ShareWorkspaces from '../resources/share-workspace.svg'
 import CreateASnapshot from '../resources/create-snapshot.svg'
 import { Link } from 'gatsby'
+import { FeatureCardProps } from '../components/FeatureCard'
 
 export const featuresCardsData = [
     {
@@ -36,61 +37,31 @@ export const featuresCardsData = [
             </defs>
         </svg>,
         iconTitle: <span>VS Code<br />Extensions</span>,
-        paragraphs: <React.Fragment>
-            <p>Gitpod feels just like your local dev environment, as you can <strong> install any VS Code extensions</strong>. Install it via drag and drop and enjoy all the features you're used to.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/docs/vscode-extensions/">VS Code Extensions.</Link></p>,
-        img: <img alt="VS Code Extensions" src={VSCodeExtensions} />
     },
     {
         id: 'prebuilt',
         title: "Prebuilt Workspaces",
         icon: IconPrebuilt,
         iconTitle: <span>Prebuilt<br />Workspaces</span>,
-        paragraphs: <React.Fragment>
-            <p>Gitpod continuously builds your git branches like a CI server to provide ready-to-code workspaces when you need them.</p>
-            <p>This means no more waiting for dependencies to be downloaded and builds to finish. Just coding.</p>
-            <p>Gitpod is the first IDE that builds your project before you even open it.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/docs/prebuilds/">Prebuilt Workspaces.</Link></p>,
-        img: <object role="presentation" tabIndex={-1} data={PrebuiltWorkspaces} />,
-        isIllustration: true
     },
     {
         id: 'parallel',
         title: "Parallel Workspaces",
         icon: IconParallel,
         iconTitle: <span>Parallel<br />Workspaces</span>,
-        paragraphs: <React.Fragment>
-            <p>Don’t postpone work because your current workspace is occupied with your work on the latest features.</p>
-            <p>To sneak in a bugfix on a maintenance branch or a code review - just start more workspaces - in parallel.</p>
-        </React.Fragment>,
-        strong: 'Use clean, fresh workspaces for every task.',
         img: <img alt="Parallel Workspaces" src={ParallelWorkspaces} />,
-        isIllustration: true
     },
     {
         id: "programming-languages",
         title: "Supports All Programming Languages",
         icon: IconLanguage,
         iconText: <span>Full<br />Automation</span>,
-        paragraphs: <React.Fragment>
-            <p>Gitpod comes with built-in language support for most popular languages: <strong>Java, JavaScript, Python, Go, Rust and C/C++</strong>, are supported out of the box and come with auto completion, diagostics, formatting and many more.</p>
-            <p>It's easy to get the same quality of language support for any other language by installing the needed <Link to="/docs/config-docker/">Tools via Docker</Link> and adding useful <Link to="/docs/vscode-extensions/">VS Code Extensions</Link>.</p>
-        </React.Fragment>,
-        img: <img alt="Supported Programming Languages" src={SupportedLanguages} />,
     },
     {
         id: 'linux',
         title: "Linux Terminals",
         icon: Terminal,
-        iconText: <span>Linux<br />Terminals</span>,
-        paragraphs: <React.Fragment>
-            <p>Gitpod instantly starts a machine in the cloud based on a Docker image. Tools that are required for your project or popular are readily installed and configured.</p>
-            <p>And still, if you like to do configurations yourself, you can adjust everything to your satisfaction by bringing your own Docker image or Dockerfile.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/docs/config-docker/">Terminals.</Link></p>,
-        img: <img alt="Linux Terminals" src={LinuxTerminal} />,
+        iconText: <span>Linux<br />Terminals</span>
     },
     {
         id: 'share',
@@ -114,11 +85,6 @@ export const featuresCardsData = [
             </defs>
         </svg>,
         iconText: <span>Share Running<br />Workspaces</span>,
-        paragraphs: <React.Fragment>
-            <p>Collaborate with your friends and colleagues and hunt down bugs together.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/docs/sharing-and-collaboration/">Sharing a Workspace.</Link></p>,
-        img: <object role="presentation" tabIndex={-1} data={ShareWorkspaces} style={{ transform: 'translateY(2rem) scale(.9)' }} />,
     },
     {
         id: 'snapshot',
@@ -141,12 +107,6 @@ export const featuresCardsData = [
             </defs>
         </svg>,
         iconText: <span>Create<br />Snapshots</span>,
-        paragraphs: <React.Fragment>
-            <p>Create a snapshot of your work and share it with the world. Based on your snapshot new workspaces can be created and edited independently.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/docs/sharing-and-collaboration/#sharing-snapshots">Sharing a Snapshot.</Link></p>,
-        img: <object role="presentation" tabIndex={-1} data={CreateASnapshot} />,
-        isIllustration: true
     },
     {
         id: "code-review",
@@ -161,7 +121,7 @@ export const featuresCardsData = [
             >
                 <g clip-path="url(#clip0)">
                     <path
-                        
+
                         d="M53.735 0H2.542C1.257 0 .215 1.356.215 3.028L0 33.847c0 1.673 1.042 3.028 2.327 3.028h31.431L45.768 48.4l-3.089-11.524H53.52c1.285 0 2.327-1.356 2.327-3.028l.215-30.819C56.062 1.356 55.02 0 53.735 0z"
                     ></path>
                     <path
@@ -177,14 +137,7 @@ export const featuresCardsData = [
                     </clipPath>
                 </defs>
             </svg>,
-
         iconText: <span>Code<br />Reviews</span>,
-        paragraphs: <React.Fragment>
-            <p>Open pull requests in Gitpod to run, navigate, and review the code from within the IDE. Reply to comments and publish code reviews without switching back to GitHub.</p>
-            <p>Thanks to <a href="#parallel">Parallel</a> and <Link to="/docs/prebuilds/">Prebuilt</Link> Workspaces, you can review code within seconds and without interfering with other ongoing work.</p>
-        </React.Fragment>,
-        more: <p>Read more about <Link to="/blog/when-code-reviews-lgtm/">Code Reviews.</Link></p>,
-        img: <img alt="Code Review" src={CodeReview} />,
     },
     {
         id: 'intelligence',
@@ -201,5 +154,97 @@ export const featuresCardsData = [
             ></path>
         </svg>,
         iconText: <span>Code <br /> Intelligence</span>
+    }
+]
+
+
+export const features: FeatureCardProps[] = [
+    {
+        src: VSCodeExtensions,
+        alt: 'VS Code Extensions',
+        title: <>Use Your Favourite<br /><strong>VS Code Extensions</strong></>,
+        text: (<>
+            <p>Install any VS Code extension or theme via drag and drop and enjoy all the features you're used to.</p>
+            <p>More about <a href="/docs/context-urls/">VS Code Extensions.</a>.</p>
+        </>)
+    },
+    {
+        src: PrebuiltWorkspaces,
+        alt: 'Prebuilt Workspaces',
+        title: <>Save Time with <strong>Prebuilt Workspaces</strong></>,
+        text: (<>
+            <p>Gitpod continuously builds your git branches like a CI server. This means no more waiting for dependencies to be downloaded and builds to finish. Just coding.</p>
+            <p><strong>Gitpod is the first IDE that builds your project before you even open it.</strong></p>
+            <p>Read more about <Link to="/docs/prebuilds/">Prebuilt Workspaces.</Link></p>
+        </>)
+    },
+    {
+        src: PrebuiltWorkspaces,
+        alt: 'Parallel Workspaces',
+        title: <>Stay Productive, Work<br />on <strong>Parallel Workspaces</strong></>,
+        text: (<>
+            <p>Don’t postpone work because your current workspace is occupied with your work on the latest features.</p>
+            <p>To sneak in a bugfix on a maintenance branch or a code review - just start more workspaces - in parallel.</p>
+            <p><strong>Use clean, fresh workspaces for every task.</strong></p>
+        </>)
+    },
+    {
+        src: PrebuiltWorkspaces,
+        alt: 'Parallel Workspaces',
+        title: <>No more Waiting with<br /><strong>Full Automation</strong></>,
+        text: (<>
+            <p>Skip the friction and get beamed into a fully setup, compiled and tested dev environment with one click.</p>
+            <p>More about <Link to="/">Continuous Dev Environments.</Link></p>
+        </>),
+        buttons: (<>
+            <button className="btn">With Gitpod</button>
+            <button className="btn btn--grey">Usual Way</button>
+        </>)
+    },
+    {
+        src: LinuxTerminal,
+        alt: 'Linux Terminals',
+        title: <>Just like Your Local IDE Including <strong>Linux Terminals</strong></>,
+        text: (<>
+            <p>Gitpod instantly starts a machine in the cloud based on a Docker image. Tools that are required for your project or popular are readily installed and configured.</p>
+            <p>And still, if you like to do configurations yourself, you can adjust everything to your satisfaction.</p>
+            <p>More about <Link to="/docs/config-docker/">Terminals.</Link></p>
+        </>)
+    },
+    {
+        src: ShareWorkspaces,
+        alt: 'Share Running Workspaces',
+        title: <>Better Collaboration with <strong>Shared Running Workspaces</strong></>,
+        text: (<>
+            <p>Collaborate with your friends, colleagues and clients and hunt down bugs together. </p>
+            <p>More about <Link to="/docs/sharing-and-collaboration/">Sharing a Workspace.</Link></p>
+        </>)
+    },
+    {
+        src: CreateASnapshot,
+        alt: 'Create A Snapshot',
+        title: <>Spread Your Work and <strong>Create a Snapshot</strong></>,
+        text: (<>
+            <p>Create a snapshot of your work and share it with the world.</p>
+            <p>Based on your snapshot new workspaces can be created and edited independently.</p>
+            <p>More about <Link to="/docs/sharing-and-collaboration/#sharing-snapshots">Sharing a Snapshot.</Link></p>
+        </>)
+    },
+    {
+        src: CodeReview,
+        alt: 'Code Review',
+        title: <>Do <strong>Code Reviews</strong><br />Within the IDE</>,
+        text: (<>
+            <p>Open pull requests in Gitpod to run, navigate, and review the code from within the IDE. Reply to comments and publish code reviews without switching back to GitHub.</p>
+            <p>More about <Link to="/blog/when-code-reviews-lgtm/">Code Reviews.</Link></p>
+        </>)
+    },
+    {
+        src: SupportedLanguages,
+        alt: 'Supported Programming Languages',
+        title: <>Benefit from<br/>Industry-Leading<br/><strong>Code Intelligence</strong></>,
+        text: (<>
+            <p>Gitpod supports 20+ programming languages out of the box which are continuously improved. If your favourite language is missing: simply find your VS Code language extension via the vendor neutral marketplace of <a href="https://open-vsx.org/" target="_blank">VSX Registry</a> and drag & drop it into Gitpod.</p>
+        </>)
     }
 ]

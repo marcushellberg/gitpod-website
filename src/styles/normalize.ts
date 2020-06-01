@@ -246,6 +246,11 @@ export default `
             }
         }
 
+        &--grey {
+            color: ${colors.white};
+            background: ${colors.text};
+        }
+
         &-wrapper {
             .btn {
                 &:first-of-type {
