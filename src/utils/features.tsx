@@ -160,6 +160,7 @@ export const featuresCardsData = [
 
 export const features: FeatureCardProps[] = [
     {
+        id: 'vs',
         src: VSCodeExtensions,
         alt: 'VS Code Extensions',
         title: <>Use Your Favourite<br /><strong>VS Code Extensions</strong></>,
@@ -169,6 +170,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'prebuilt',
         src: PrebuiltWorkspaces,
         alt: 'Prebuilt Workspaces',
         title: <>Save Time with <strong>Prebuilt Workspaces</strong></>,
@@ -179,6 +181,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'parallel',
         src: PrebuiltWorkspaces,
         alt: 'Parallel Workspaces',
         title: <>Stay Productive, Work<br />on <strong>Parallel Workspaces</strong></>,
@@ -202,6 +205,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'linux',
         src: LinuxTerminal,
         alt: 'Linux Terminals',
         title: <>Just like Your Local IDE Including <strong>Linux Terminals</strong></>,
@@ -212,6 +216,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'share',
         src: ShareWorkspaces,
         alt: 'Share Running Workspaces',
         title: <>Better Collaboration with <strong>Shared Running Workspaces</strong></>,
@@ -221,6 +226,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'snapshot',
         src: CreateASnapshot,
         alt: 'Create A Snapshot',
         title: <>Spread Your Work and <strong>Create a Snapshot</strong></>,
@@ -231,6 +237,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: "code-review",
         src: CodeReview,
         alt: 'Code Review',
         title: <>Do <strong>Code Reviews</strong><br />Within the IDE</>,
@@ -240,6 +247,7 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
+        id: 'intelligence',
         src: SupportedLanguages,
         alt: 'Supported Programming Languages',
         title: <>Benefit from<br/>Industry-Leading<br/><strong>Code Intelligence</strong></>,

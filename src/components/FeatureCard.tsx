@@ -133,9 +133,10 @@ export interface FeatureCardProps {
     text: string | JSX.Element
     direction?: string
     buttons?: JSX.Element
+    id?: string
 }
 
-const FeatureCard = ({ src, alt, title, text, direction, buttons }: FeatureCardProps) => {
+const FeatureCard = ({ src, alt, title, text, direction, buttons, id }: FeatureCardProps) => {
     const imageContainerRef = useRef<HTMLDivElement>(null)
     const [inView, setInView] = useState(false)
 
@@ -160,7 +161,7 @@ const FeatureCard = ({ src, alt, title, text, direction, buttons }: FeatureCardP
     }, [inView])
 
     return (
-        <Styled className="row" direction={direction}>
+        <Styled className="row" direction={direction} id={id}>
             <div 
                 className={`img-container ${inView ? 'in-view': ''}`}
                 ref={imageContainerRef}
