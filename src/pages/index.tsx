@@ -34,8 +34,6 @@ const IndexPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/'>
         <Banner />
 
-        <Tagline />
-
         <TrustedBy
             brands={[
                 {
@@ -142,6 +140,8 @@ const IndexPage: React.SFC<{}> = () => (
                 },
             ]}
         />
+
+        <Tagline />
 
         <FeatureCards 
             features={features}

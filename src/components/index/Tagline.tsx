@@ -8,6 +8,7 @@ const Styled = styled.section`
     justify-content: space-between;
     align-items: center;
     max-width: 900px;
+    margin: 0 auto;
 
     @media(max-width: ${sizes.breakpoints.md}) {
         flex-direction: column;
