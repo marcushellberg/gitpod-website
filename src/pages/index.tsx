@@ -28,10 +28,13 @@ import AmazonLogo from '../resources/amazon.svg'
 import IntelLogo from '../resources/intel.svg'
 
 import { features } from '../utils/index'
+import Tagline from '../components/index/Tagline'
 
 const IndexPage: React.SFC<{}> = () => (
     <IndexLayout canonical='/'>
         <Banner />
+
+        <Tagline />
 
         <TrustedBy
             brands={[
