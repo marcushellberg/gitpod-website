@@ -5,15 +5,19 @@ import { colors, sizes, borders } from '../../styles/variables'
 
 const StyledFeatureBox = styled.div`
     position: relative;
-    padding: 1rem .6rem;
     text-align: center;
     background: ${colors.white};
     border-radius: 1rem;
     border: ${borders.light2};
     transition: all .2s;
 
-    @media(max-width: 980px) {
-       padding: .5rem 2.5rem;
+    a {
+        display: block;
+        padding: 1rem .6rem;
+
+        @media(max-width: 980px) {
+            padding: .5rem 2.5rem;
+        }
     }
 
     h3 {
