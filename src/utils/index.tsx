@@ -2,13 +2,14 @@ import React from 'react'
 
 import { FeatureCardProps } from '../components/FeatureCard'
 
-import ToolIntegration from '../resources/tool-integration.svg'
-import FullDevEnvironments from '../resources/full-dev-environments.svg'
+import StayInFlow from '../resources/stay-in-flow.svg'
+import Tablet from '../resources/tablet.svg'
+import GitpodIDE from '../resources/gitpod-ide.svg'
 
 export const features: FeatureCardProps[] = [
     {
-        src: ToolIntegration,
-        alt: 'Tools Integration',
+        src: StayInFlow,
+        alt: 'GitHub, GitLab and Bitbucket',
         title: <>Stay in the Flow -<br /><strong>GitLab, GitHub & Bitbucket Integration</strong></>,
         text: (<>
             <p>Start your workflow from your Git hosting platform and let Gitpod beam you in a ready-to-code dev environment.</p>
@@ -17,8 +18,8 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
-        src: ToolIntegration,
-        alt: 'Tools Integration',
+        src: Tablet,
+        alt: 'Gitpod on a Tablet',
         title: <>Save Resources -<br /><strong>Use your Chromebook or Tablet</strong></>,
         text: (<>
             <p>No more need for expensive high-end notebooks, with Gitpod coding gets accessible for everyone.</p>
@@ -26,8 +27,8 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
-        src: FullDevEnvironments,
-        alt: 'Theia - VS Code based online IDE',
+        src: GitpodIDE,
+        alt: 'Gitpod - Theia based online IDE',
         title: <>Code Like Usual -<br /><strong>Based on the Online IDE Theia</strong></>,
         text: (<>
             <p>Gitpod is just like your local IDE.</p>

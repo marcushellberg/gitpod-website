@@ -21,7 +21,7 @@ const Styled = styled.div<{ direction?: string }>`
     }
     
     @media(min-width: 881px) {
-        margin: 15rem auto;
+        margin: 18rem auto;
     }
 
     @media(max-width: 880px) {
@@ -74,27 +74,21 @@ const Styled = styled.div<{ direction?: string }>`
     img {
         height: 100%;
         width: 100%;
+        max-height: 440px;
     }
 
     .img-container {
-        min-height: 24rem;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-
+        
         @media(min-width: 881px) {
             position: relative;
-            padding: 15rem 0;
             padding-right: ${({ direction }) => (direction === 'right') ? '8rem' : ''};
             padding-left: ${({ direction }) => !(direction === 'right') ? '8rem' : ''};
-        }
-
-        @media(max-width: 880px) {
-            padding: 6rem 0;
-        }
-
-        @media(min-width: 881px) {
+            min-height: 520px;
+            max-height: 500px;
             flex: 0 0 52%;
 
             &::before {
@@ -110,6 +104,10 @@ const Styled = styled.div<{ direction?: string }>`
                 background-repeat: repeat;
                 transition: all .3s ease-out;
             }
+        }
+
+        @media(max-width: 880px) {
+            margin-bottom: 5rem;
         }
     }
 
