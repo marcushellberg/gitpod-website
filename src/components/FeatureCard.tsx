@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
 import styled from '@emotion/styled'
 import { sizes } from '../styles/variables'
 import Pattern from '../resources/pattern-2.png'
 
-const Styled = styled.div<{direction?: string}>`
+const Styled = styled.div<{ direction?: string }>`
     h2 + p {
         margin: 0;
     }
@@ -86,8 +86,8 @@ const Styled = styled.div<{direction?: string}>`
         @media(min-width: 881px) {
             position: relative;
             padding: 15rem 0;
-            padding-right: ${({direction}) => (direction === 'right') ? '8rem' : ''};
-            padding-left: ${({direction}) => !(direction === 'right') ? '8rem' : ''};
+            padding-right: ${({ direction }) => (direction === 'right') ? '8rem' : ''};
+            padding-left: ${({ direction }) => !(direction === 'right') ? '8rem' : ''};
         }
 
         @media(max-width: 880px) {
@@ -100,25 +100,29 @@ const Styled = styled.div<{direction?: string}>`
             &::before {
                 content: "";
                 position: absolute;
-                right: ${({direction}) => !(direction === 'right') ? '' : 0};
-                left: ${({direction}) => (direction === 'right') ? '' : 0};
+                right: ${({ direction }) => !(direction === 'right') ? '' : 0};
+                left: ${({ direction }) => (direction === 'right') ? '' : 0};
                 display: block;
                 width: 55vw;
                 height: 100%;
                 background: url(${Pattern});
                 background-size: cover;
                 background-repeat: repeat;
-                transition: all .2s;
-            }
-
-            &:hover::before {
-                transform: ${({direction}) => direction === 'right' ? 'translateX(5rem)' : 'translateX(-5rem)'};
+                transition: all .3s ease-out;
             }
         }
     }
 
+    .in-view::before {
+        transform: ${({ direction }) => direction === 'right' ? 'translateX(5rem)' : 'translateX(-5rem)'};
+    }
+
     .buttons {
         margin-top: 6rem;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
     }
 `
 
@@ -128,23 +132,51 @@ export interface FeatureCardProps {
     title: string | JSX.Element
     text: string | JSX.Element
     direction?: string
-    buttons?: JSX.Element 
+    buttons?: JSX.Element
 }
 
-const FeatureCard = ({ src, alt, title, text, direction, buttons }: FeatureCardProps) => (
-    <Styled className="row" direction={direction}>
-        <div className="img-container">
-            <img 
-                src={src}
-                alt={alt}
-            />
-        </div>
-        <div className="text">
-            <h2>{title}</h2>
-            {text}
-            { buttons ? <div className="buttons btn-wrapper">{buttons}</div> : null }
-        </div>
-    </Styled>
-)
+const FeatureCard = ({ src, alt, title, text, direction, buttons }: FeatureCardProps) => {
+    const imageContainerRef = useRef<HTMLDivElement>(null)
+    const [inView, setInView] = useState(false)
+
+    const isInView = () => {
+        if(imageContainerRef.current) {
+            const rect = imageContainerRef.current.getBoundingClientRect()
+            return rect.top >= 0 && rect.bottom <= window.innerHeight
+        }
+        return false
+    }
+
+    const scrollHandler = () => {
+        setInView(isInView())
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollHandler)
+        setInView(isInView())
+        return (() => {
+            window.removeEventListener('scroll', scrollHandler)
+        })
+    }, [inView])
+
+    return (
+        <Styled className="row" direction={direction}>
+            <div 
+                className={`img-container ${inView ? 'in-view': ''}`}
+                ref={imageContainerRef}
+            >
+                <img
+                    src={src}
+                    alt={alt}
+                />
+            </div>
+            <div className="text">
+                <h2>{title}</h2>
+                {text}
+                {buttons ? <div className="buttons btn-wrapper">{buttons}</div> : null}
+            </div>
+        </Styled>
+    )
+}
 
 export default FeatureCard
