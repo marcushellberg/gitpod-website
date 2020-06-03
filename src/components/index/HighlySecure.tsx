@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from '@emotion/styled'
 import PatternLong from '../../resources/pattern-long.png'
-import HighlySecureIcon from '../../resources/highly-secure.svg'
+import HighlySecureIcon from '../../resources/highly-secure.png'
 
 const Styled = styled.section`
 
