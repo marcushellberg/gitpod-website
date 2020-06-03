@@ -49,12 +49,18 @@ const StyledFeatureBox = styled.div`
         stroke: ${colors.white};
     }
 
+    svg {
+        fill: ${colors.offWhite1};
+        stroke: ${colors.offWhite1};
+    }
+
     &:hover {
         color: ${colors.white};
         background: ${colors.text};
 
         svg {
             fill: ${colors.white};
+            stroke: ${colors.white};
         }
 
         h3 {
