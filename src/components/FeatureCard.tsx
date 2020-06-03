@@ -3,8 +3,9 @@ import React, { useRef, useEffect, useState } from 'react'
 import styled from '@emotion/styled'
 import { sizes } from '../styles/variables'
 import Pattern from '../resources/pattern-2.png'
+import IconTick from '../resources/icon-tick.svg'
 
-const Styled = styled.div<{ direction?: string }>`
+const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContainer?: boolean }>`
     h2 + p {
         margin: 0;
     }
@@ -72,15 +73,21 @@ const Styled = styled.div<{ direction?: string }>`
     }
 
     img {
-        height: 100%;
         width: 100%;
         max-height: 440px;
     }
 
     .img-container {
         display: flex;
+        flex-direction: ${
+            ({flexDirectionColumnForImgContainer}) => 
+            flexDirectionColumnForImgContainer ? 'column' : ''
+        };
         justify-content: center;
-        align-items: center;
+        align-items: ${
+            ({flexDirectionColumnForImgContainer}) => 
+            flexDirectionColumnForImgContainer ? '' : 'center'
+        };;
         width: 100%;
         
         @media(min-width: 881px) {
@@ -119,8 +126,20 @@ const Styled = styled.div<{ direction?: string }>`
         margin-top: 6rem;
     }
 
-    .rotate {
-        transform: rotate(180deg);
+    ul {
+        margin-top: 5rem;
+        font-size: 1.9rem;
+    }
+
+    li {
+        display: flex;
+        &::before {
+            content: url(${IconTick});
+            transform: scale(1.4);
+            display: block;
+            margin: 0 2rem 0 1rem;
+            left: -.5rem;
+        }
     }
 `
 
@@ -132,14 +151,15 @@ export interface FeatureCardProps {
     direction?: string
     buttons?: JSX.Element
     id?: string
+    featuresList?: string[]
 }
 
-const FeatureCard = ({ src, alt, title, text, direction, buttons, id }: FeatureCardProps) => {
+const FeatureCard = ({ src, alt, title, text, direction, buttons, id, featuresList }: FeatureCardProps) => {
     const imageContainerRef = useRef<HTMLDivElement>(null)
     const [inView, setInView] = useState(false)
 
     const isInView = () => {
-        if(imageContainerRef.current) {
+        if (imageContainerRef.current) {
             const rect = imageContainerRef.current.getBoundingClientRect()
             return rect.top >= 0 && rect.bottom <= window.innerHeight
         }
@@ -159,15 +179,20 @@ const FeatureCard = ({ src, alt, title, text, direction, buttons, id }: FeatureC
     }, [inView])
 
     return (
-        <Styled className="row" direction={direction} id={id}>
-            <div 
-                className={`img-container ${inView ? 'in-view': ''}`}
+        <Styled className="row" direction={direction} id={id} flexDirectionColumnForImgContainer={featuresList && featuresList.length ? true : false}>
+            <div
+                className={`img-container ${inView ? 'in-view' : ''}`}
                 ref={imageContainerRef}
             >
                 <img
                     src={src}
                     alt={alt}
                 />
+                {featuresList && featuresList.length ? (<ul>
+                    {featuresList.map(
+                        (feat, i) => <li key={i+feat}>{feat}</li>
+                    )}
+                </ul>) : null}
             </div>
             <div className="text">
                 <h2>{title}</h2>

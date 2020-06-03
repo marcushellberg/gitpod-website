@@ -106,7 +106,8 @@ export const features: FeatureCardProps[] = [
         title: <>Benefit from<br />Industry-Leading<br /><strong>Code Intelligence</strong></>,
         text: (<>
             <p>Gitpod supports 20+ programming languages out of the box which are continuously improved. If your favourite language is missing: simply find your VS Code language extension via the vendor neutral marketplace of <a href="https://open-vsx.org/" target="_blank">VSX Registry</a> and drag & drop it into Gitpod.</p>
-        </>)
+        </>),
+        featuresList: ['Syntax Highlighting', 'Smart Completions', 'Linting & Quick Fixes', 'Code Navigation', 'Debugging', 'Refactoring', 'Security Vulnerability Detection', 'Suggested Optimizations']
     }
 ]
 
