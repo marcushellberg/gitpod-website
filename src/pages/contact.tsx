@@ -153,7 +153,6 @@ export default function ContactPage(props: any) {
     }
 
     const handleChangeSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.target.name)
         setState({
             ...state,
             errorMessage: undefined,

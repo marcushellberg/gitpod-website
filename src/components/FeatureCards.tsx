@@ -12,7 +12,6 @@ const Styled = styled.section`
 `
 
 const FeatureCards = ({ features }: { features: FeatureCardProps[] }) => {
-    console.log(features)
     return  (
         <Styled>
             <div className="container">
