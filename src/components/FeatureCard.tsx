@@ -80,14 +80,14 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
     .img-container {
         display: flex;
         flex-direction: ${
-            ({flexDirectionColumnForImgContainer}) => 
-            flexDirectionColumnForImgContainer ? 'column' : ''
-        };
+    ({ flexDirectionColumnForImgContainer }) =>
+        flexDirectionColumnForImgContainer ? 'column' : ''
+    };
         justify-content: center;
         align-items: ${
-            ({flexDirectionColumnForImgContainer}) => 
-            flexDirectionColumnForImgContainer ? '' : 'center'
-        };;
+    ({ flexDirectionColumnForImgContainer }) =>
+        flexDirectionColumnForImgContainer ? '' : 'center'
+    };;
         width: 100%;
         
         @media(min-width: 881px) {
@@ -144,19 +144,21 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
 `
 
 export interface FeatureCardProps {
-    src: string
-    alt: string
+    src?: string
+    alt?: string
+    Graphic?: any
     title: string | JSX.Element
     text: string | JSX.Element
     direction?: string
-    buttons?: JSX.Element
     id?: string
-    featuresList?: string[]
+    featuresList?: string[],
+    Buttons?: any
 }
 
-const FeatureCard = ({ src, alt, title, text, direction, buttons, id, featuresList }: FeatureCardProps) => {
+const FeatureCard = ({ src, alt, Graphic, title, text, direction, id, featuresList, Buttons }: FeatureCardProps) => {
     const imageContainerRef = useRef<HTMLDivElement>(null)
     const [inView, setInView] = useState(false)
+    const [renderedGraphic, setRenderedGraphic] = useState<string>('')
 
     const isInView = () => {
         if (imageContainerRef.current) {
@@ -184,20 +186,25 @@ const FeatureCard = ({ src, alt, title, text, direction, buttons, id, featuresLi
                 className={`img-container ${inView ? 'in-view' : ''}`}
                 ref={imageContainerRef}
             >
-                <img
+                {Graphic ? <Graphic 
+                    renderedGraphic={renderedGraphic}
+                /> : null}
+                {src ? <img
                     src={src}
                     alt={alt}
-                />
+                /> : null}
                 {featuresList && featuresList.length ? (<ul>
                     {featuresList.map(
-                        (feat, i) => <li key={i+feat}>{feat}</li>
+                        (feat, i) => <li key={i + feat}>{feat}</li>
                     )}
                 </ul>) : null}
             </div>
             <div className="text">
                 <h2>{title}</h2>
                 {text}
-                {buttons ? <div className="buttons btn-wrapper">{buttons}</div> : null}
+                { Buttons ? <Buttons 
+                    setRenderedGraphic={setRenderedGraphic}
+                /> : null}
             </div>
         </Styled>
     )

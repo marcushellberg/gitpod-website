@@ -10,6 +10,9 @@ import SharedWorkspaces from '../resources/shared-workspaces.png'
 import CreateASnapshot from '../resources/workspace-snapshot.png'
 import { Link } from 'gatsby'
 import { FeatureCardProps } from '../components/FeatureCard'
+import FullAutomationGraphics from '../components/features/FullAutomationGraphics'
+import FullAutomationButtons from '../components/features/FullAutomationButtons'
+
 
 export const features: FeatureCardProps[] = [
     {
@@ -45,17 +48,14 @@ export const features: FeatureCardProps[] = [
         </>)
     },
     {
-        src: PrebuiltWorkspaces,
-        alt: 'Parallel Workspaces',
+        id: 'automation',
+        Graphic: FullAutomationGraphics,
         title: <>No more Waiting with<br /><strong>Full Automation</strong></>,
         text: (<>
             <p>Skip the friction and get beamed into a fully setup, compiled and tested dev environment with one click.</p>
             <p>More about <Link to="/">Continuous Dev Environments.</Link></p>
         </>),
-        buttons: (<>
-            <button className="btn">With Gitpod</button>
-            <button className="btn btn--grey">Usual Way</button>
-        </>)
+        Buttons: FullAutomationButtons
     },
     {
         id: 'linux',
@@ -178,8 +178,8 @@ export const featuresCardsData = [
         img: <img alt="Parallel Workspaces" src={ParallelWorkspaces} />,
     },
     {
-        id: "programming-languages",
-        title: "Supports All Programming Languages",
+        id: "automation",
+        title: "Full Automation",
         icon: <svg
             xmlns="http://www.w3.org/2000/svg"
             width="42.862"
