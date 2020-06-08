@@ -271,6 +271,11 @@ export default `
                 }
             }
         }
+
+        &--disabled {
+            opacity: .7;
+            pointer-events: none;
+        }
     }
 
     .link {

@@ -137,23 +137,28 @@ const Styled = styled.label`
 
             .message {
                 position: absolute;
-                bottom: -6rem;
+                bottom: -12rem;
                 left: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+
+                .btn {
+                    margin-top: 2rem;
+                }
 
                 @media(max-width: 530px) {
                     left: -10rem;
-                    bottom: -7rem;
                 }
 
                 @media(max-width: 410px) {
                     left: -14rem;
-                    bottom: -7rem;
                     transform: scale(.8);
                 }
                 
                 @media(max-width: 340px) {
                     left: -16rem;
-                    bottom: -8rem;
+                    bottom: -13rem;
                 }
             }
         }
@@ -161,6 +166,9 @@ const Styled = styled.label`
         .label {
             display: flex;
             align-items: center;
+            @media(max-width: 340px) {
+                font-size: 90%;
+            }
 
             img {
                 height: 1rem;
@@ -180,15 +188,21 @@ const Styled = styled.label`
             background: none;
             border: none;
             color: inherit;
+
+            @media(max-width: 340px) {
+                font-size: 90%;
+            }
         }
 
     }
 
     .info {
-        height: 9rem;
+        height: 14rem;
         background: #292c31;
     }
 `
+
+const errorMessage = 'Please Enter a valid Github or GitLab repo Url!'
 
 const PrefixInput = () => {
     const [url, setUrl] = useState<string>(`https://github.com/freeCodeCamp/freeCodeCamp`)
@@ -204,26 +218,24 @@ const PrefixInput = () => {
         }
     }
 
-    const setUrlOrError = (isValid: boolean, url: string) => {
-        if (isValid) {
-            setUrl(url)
-            setError('')
-        } else {
-            setError('Please Enter a valid Github or GitLab repo Url!')
-        }
-    }
-
-    const handleUrlChange = (e: React.FormEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
         const el = e.target as HTMLInputElement
-        setUrlOrError(validateUrl(el.value), el.value)
+        if(validateUrl(el.value) || el.value == '') {
+            setError('')
+            setUrl(el.value)
+        } else {
+            setError(errorMessage)
+        }
     }
 
     const handleReturn = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if(e.key === 'Enter') {
             const el = e.target as HTMLInputElement
-            setUrlOrError(validateUrl(el.value), el.value)
-            if(!error) {
-                window.open(`https://gitpod.io#${url}`, '_blank')
+            if(validateUrl(el.value)) {
+                window.open(`https://gitpod.io#${el.value}`, '_blank')
+                setError('')
+            } else {
+              setError(errorMessage)  
             }
         }
     }
@@ -260,15 +272,28 @@ const PrefixInput = () => {
                     <span className="wrapper">
                         <input
                             defaultValue={url}
-                            onChange={handleUrlChange}
                             onKeyPress={handleReturn}
+                            onChange={handleChange}
                             type="text"
                         />
-                        <p className="message" style={ error ? {color: '#bf4338'} : {}}>{error ? error : `Enter your GitHub or GitLab URL`}</p>
+                        <div className="message" style={ error ? {color: '#bf4338'} : {}}> 
+                            <>
+                                <p>
+                                    { error ? error : 'Enter your GitHub or GitLab URL' }
+                                </p>
+                                <a
+                                    href={`https://gitpod.io/#${url}`}
+                                    target='_blank'
+                                    className={`btn ${error || !url ? 'btn--disabled' : ''}`}
+                                >
+                                    Start Workspace
+                                </a>
+                            </>
+                        </div>
                     </span>
                 </div>
             </div>
-            <div className="info" aria-hidden="true">
+            <div className="info">
                 &nbsp;
             </div>
         </Styled>

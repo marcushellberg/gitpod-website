@@ -33,6 +33,7 @@ const StyledGetStarted = styled.div`
 
                 @media(max-width: ${sizes.breakpoints.lg}) {
                     padding: 5rem 2rem;
+                    text-align: center;
                 }
 
                 &-container {
