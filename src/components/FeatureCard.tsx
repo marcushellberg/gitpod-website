@@ -126,6 +126,12 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
         margin-top: 6rem;
     }
 
+    @media(min-width: 881px) {
+        .btn {
+            margin-bottom: 2rem;
+        }
+    }
+
     ul {
         margin-top: 5rem;
         font-size: 1.9rem;
