@@ -109,7 +109,7 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
                 background: url(${Pattern});
                 background-size: cover;
                 background-repeat: repeat;
-                transition: all .3s ease-out;
+                transition: all .6s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
         }
 
