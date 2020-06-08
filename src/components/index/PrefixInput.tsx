@@ -285,6 +285,7 @@ const PrefixInput = () => {
                                     href={`https://gitpod.io/#${url}`}
                                     target='_blank'
                                     className={`btn ${error || !url ? 'btn--disabled' : ''}`}
+                                    tabIndex={error || !url ? -1 : 0 }
                                 >
                                     Start Workspace
                                 </a>
