@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 
 import styled from '@emotion/styled'
 import { sizes } from '../styles/variables'
-import Pattern from '../resources/pattern-2.png'
+import Pattern from '../resources/pattern-2.jpg'
 import IconTick from '../resources/icon-tick.svg'
 
 const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContainer?: boolean }>`
@@ -110,6 +110,7 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
                 background-size: cover;
                 background-repeat: repeat;
                 z-index: -1;
+                opacity: .1;
             }
         }
 
