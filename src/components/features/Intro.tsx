@@ -8,10 +8,11 @@ import IceStick from '../../resources/ice-stick.svg'
 
 const Styled = styled.div`
     .intro {
+        padding: 8rem 0 12rem;
 
         .ice-stick {
             display: block;
-            width: 12rem;
+            width: 10rem;
             margin: 0 auto;
         }
 
