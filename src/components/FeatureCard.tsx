@@ -109,7 +109,6 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
                 background: url(${Pattern});
                 background-size: cover;
                 background-repeat: repeat;
-                transition: all .6s cubic-bezier(0.34, 1.56, 0.64, 1);
             }
         }
 
@@ -118,8 +117,20 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
         }
     }
 
+    @keyframes slideInLeft {
+        100% {
+            transform: translateX(5rem);
+        }
+    }
+
+    @keyframes slideInRight {
+        100% {
+            transform: translateX(-5rem)
+        }
+    }
+
     .in-view::before {
-        transform: ${({ direction }) => direction === 'right' ? 'translateX(5rem)' : 'translateX(-5rem)'};
+        animation: ${({ direction }) => direction === 'right' ? 'slideInLeft' : 'slideInRight'} 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1 normal forwards;
     }
 
     .buttons {
@@ -163,7 +174,7 @@ export interface FeatureCardProps {
 
 const FeatureCard = ({ src, alt, Graphic, title, text, direction, id, featuresList, Buttons }: FeatureCardProps) => {
     const imageContainerRef = useRef<HTMLDivElement>(null)
-    const [inView, setInView] = useState(false)
+    const [imageContainerClassList, setImageContainerClassList] = useState<string>('img-container')
     const [renderedGraphic, setRenderedGraphic] = useState<string>('')
 
     const isInView = () => {
@@ -174,22 +185,28 @@ const FeatureCard = ({ src, alt, Graphic, title, text, direction, id, featuresLi
         return false
     }
 
+    const addInViewClass = () => {
+        if(isInView()) {
+            setImageContainerClassList('img-container in-view')
+        }
+    }
+
     const scrollHandler = () => {
-        setInView(isInView())
+        addInViewClass()
     }
 
     useEffect(() => {
         window.addEventListener('scroll', scrollHandler)
-        setInView(isInView())
+        addInViewClass()
         return (() => {
             window.removeEventListener('scroll', scrollHandler)
         })
-    }, [inView])
+    })
 
     return (
         <Styled className="row" direction={direction} id={id} flexDirectionColumnForImgContainer={featuresList && featuresList.length ? true : false}>
             <div
-                className={`img-container ${inView ? 'in-view' : ''}`}
+                className={imageContainerClassList}
                 ref={imageContainerRef}
             >
                 {Graphic ? <Graphic 
