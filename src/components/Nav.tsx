@@ -299,7 +299,7 @@ const Nav = ({ shouldHaveGreyBackground }: { shouldHaveGreyBackground?: boolean 
                                 ]}
                             />
                         </li>
-                        <li className="nav__item"><a href="https://gitpod.io/login/" rel="noopener" className="btn">Log In</a></li>
+                        <li className="nav__item"><a href="https://gitpod.io/login/" rel="noopener" className="btn btn--small">Log In</a></li>
                     </ul>
 
                 </StyledNav>

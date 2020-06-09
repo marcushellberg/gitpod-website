@@ -230,6 +230,12 @@ export default `
             font-weight: 600;
         }
 
+        &--small {
+            padding: .5rem 2rem;
+            font-size: 95%;
+            min-width: auto;
+        }
+
         &--cta {
             color: ${colors.white};
             background: ${colors.link};

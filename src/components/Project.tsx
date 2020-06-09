@@ -44,7 +44,7 @@ const Project: React.SFC<ProjectProps> = ({ image, title, href }) => (
     <StyledProject className="project">
         {image}
         <p>{title}</p>
-        <a href={`https://gitpod.io#${href}`} target="_blank" className="btn">Start Workspace</a>
+        <a href={`https://gitpod.io#${href}`} target="_blank" className="btn btn--small">Start Workspace</a>
     </StyledProject>
 )
 
