@@ -33,7 +33,7 @@ const StyledFeatureBox = styled.div`
     img, svg {
         height: 3.3rem;
         display: block;
-        margin: 2rem auto 2.5rem;
+        margin: 2rem auto;
         transition: all .3s;
 
         @media(max-width: ${sizes.breakpoints.sm}) {
