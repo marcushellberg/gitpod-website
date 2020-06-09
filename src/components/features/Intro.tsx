@@ -4,10 +4,10 @@ import styled from '@emotion/styled'
 import FeatureBox from './FeatureBox'
 import { featuresCardsData } from '../../utils/features'
 import { sizes } from '../../styles/variables'
+import IceStick from '../../resources/ice-stick.svg'
 
 const Styled = styled.div`
     .intro {
-        padding-top: 3rem;
 
         .ice-stick {
             display: block;
@@ -17,7 +17,6 @@ const Styled = styled.div`
 
         h1 {
             text-align: center;
-            margin-top: 16rem;
         }
 
         .features {
@@ -69,6 +68,7 @@ const Styled = styled.div`
 const Intro = () => (
    <Styled>
         <section className="intro pattern" id="top">
+        <object role="presentation" tabIndex={-1} data={IceStick} className="ice-stick" />
         <h1>Features</h1>
         <div className="features">
             {
