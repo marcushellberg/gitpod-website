@@ -230,7 +230,7 @@ const Nav = ({ shouldHaveGreyBackground }: { shouldHaveGreyBackground?: boolean 
     }
 
     return (
-        <div style={{ zIndex: 9999 }} className={`${shouldHaveGreyBackground ? 'grey-container': ''}`}>
+        <div style={{ zIndex: 9999 }} className={`${shouldHaveGreyBackground ? 'grey-container': ''}`} id="top">
             <Global
                 styles={css`
                         html {

@@ -67,7 +67,7 @@ const Styled = styled.div`
 
 const Intro = () => (
    <Styled>
-        <section className="intro pattern" id="top">
+        <section className="intro pattern">
         <object role="presentation" tabIndex={-1} data={IceStick} className="ice-stick" />
         <h1>Features</h1>
         <div className="features">
