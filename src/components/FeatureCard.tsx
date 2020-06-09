@@ -109,6 +109,7 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
                 background: url(${Pattern});
                 background-size: cover;
                 background-repeat: repeat;
+                z-index: -1;
             }
         }
 
