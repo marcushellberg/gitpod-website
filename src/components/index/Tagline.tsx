@@ -109,8 +109,8 @@ const Tagline = () => (
                 </div>
             </div>
             <div className="text">
-                <h2><strong>Increase your productivity up to 24%</strong> with prebuilts & automated dev environments.</h2>
-                <p>No more waiting for tests and builds to complete, No more tedious environment management to maintain.</p>
+                <h2><strong>Increase your productivity up to 24%</strong> with prebuilts & automated dev&nbsp;environments.</h2>
+                <p>No more waiting for tests and builds to complete,<br />No more tedious environment management to maintain.</p>
             </div>
         </Styled>
     </div>
