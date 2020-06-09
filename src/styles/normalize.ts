@@ -208,7 +208,7 @@ export default `
         display: inline-block;
         min-width: 14.5rem;
         padding: .8rem 2.2rem;
-        font-weight: 600;
+        font-weight: 500;
         text-align: center;
         color: ${colors.textDark};
         background: ${colors.white};
