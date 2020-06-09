@@ -74,7 +74,7 @@ const tweets = [
 ]
 
 const Testimonials: React.SFC<{}> = () => (
-    <StyledTestimonials className="grey-container">
+    <StyledTestimonials>
         <section className="testimonials">
                 <div className="row">
                     <h2>Trusted by 150,000+ Developers</h2>
