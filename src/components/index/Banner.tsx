@@ -7,7 +7,7 @@ import { sizes } from '../../styles/variables'
 const Styled = styled.div`
     .banner {
         display: flex;
-        padding-bottom: 16rem;
+        padding: 4rem 0 20rem;
         position: relative;
 
         @media(min-width: ${sizes.breakpoints.lg}) {
@@ -56,7 +56,7 @@ const Styled = styled.div`
             }
 
             @media(min-width: ${sizes.breakpoints.lg}) {
-                transform: scale(1.15) translate(6.5rem, 6rem);
+                transform: translate(12rem, 6rem);
 
                 &-container {
                     width: 50%;

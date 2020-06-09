@@ -208,7 +208,7 @@ const StyledNav = styled.nav`
     }
 `
 
-const Nav = () => {
+const Nav = ({ shouldHaveGreyBackground }: { shouldHaveGreyBackground?: boolean }) => {
     const [isNavRendered, setIsNavRendered] = useState(false)
 
     const unLock = () => {
@@ -230,7 +230,7 @@ const Nav = () => {
     }
 
     return (
-        <div className="grey-container" style={{ zIndex: 9999 }}>
+        <div style={{ zIndex: 9999 }} className={`${shouldHaveGreyBackground ? 'grey-container': ''}`}>
             <Global
                 styles={css`
                         html {
