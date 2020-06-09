@@ -216,6 +216,7 @@ const FeatureCard = ({ src, alt, Graphic, title, text, direction, id, featuresLi
                 {src ? <img
                     src={src}
                     alt={alt}
+                    style={ featuresList && featuresList.length ? { transform: 'scale(.9)' } : {}}
                 /> : null}
                 {featuresList && featuresList.length ? (<ul>
                     {featuresList.map(
