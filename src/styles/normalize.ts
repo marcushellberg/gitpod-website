@@ -255,6 +255,12 @@ export default `
         &--grey {
             color: ${colors.white};
             background: ${colors.text};
+
+            &:hover,
+            &:focus {
+                color: ${colors.text};
+                background: ${colors.white};
+            }
         }
 
         &-wrapper {
