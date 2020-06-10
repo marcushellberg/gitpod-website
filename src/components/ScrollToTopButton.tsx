@@ -27,7 +27,8 @@ const StyledScrollToTopButton = styled.a`
     }
 
     img {
-        height: 4rem;
+        height: 3rem;
+        width: 3rem;
     }
 `
 
