@@ -18,7 +18,11 @@ const StyledPricingLinks = styled.section`
     @media(max-width: 720px) {
         flex-direction: column;
         text-align: center;
-        max-width: 550px;   
+        max-width: 550px;
+
+        .btn-wrapper {
+            justify-content: center;
+        }
     }
 
     img {

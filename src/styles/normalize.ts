@@ -264,23 +264,19 @@ export default `
         }
 
         &-wrapper {
-            .btn {
-                &:first-of-type {
-                    margin-right: 2.5rem;
+            --gap: 2rem;
 
-                    @media(max-width: 414px) {
-                        margin-right: 0;
-                        margin-bottom: 2rem;
-                    }
-                } 
+            display: flex;
+            flex-wrap: wrap;
+            margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+            width: calc(100% + var(--gap));
+
+            @media(max-width: ${sizes.breakpoints.sm}) {
+                justify-content: center;
             }
 
-            br {
-                display: none;
-
-                @media(max-width: 414px) {
-                    display: block !important;
-                }
+            & > * {
+                margin: var(--gap) 0 0 var(--gap); 
             }
         }
 
