@@ -75,6 +75,14 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
     img {
         width: 100%;
         max-height: 440px;
+
+        @media(max-width: 880px) {
+            max-height: 400px;
+        }
+
+        @media(max-width: 500px) {
+            max-height: 300px;
+        }
     }
 
     .img-container {
@@ -119,6 +127,7 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
         }
 
         @media(max-width: 880px) {
+            min-height: 240px;
             padding: 5rem;
             margin-bottom: 2.5rem;
 
@@ -168,6 +177,18 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
     ul {
         margin-top: 5rem;
         font-size: 1.9rem;
+
+        @media(max-width: 500px) {
+            font-size: 1.6rem;
+        }
+
+        @media(max-width: 320px) {
+            font-size: 1.5rem;
+        }
+
+        @media(max-width: 290px) {
+            font-size: 1.4rem;
+        }
     }
 
     li {
@@ -178,6 +199,10 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
             display: block;
             margin: 0 2rem 0 1rem;
             left: -.5rem;
+
+            @media(max-width: 500px) {
+                margin: 0 1rem 0 0;
+            }
         }
     }
 `
