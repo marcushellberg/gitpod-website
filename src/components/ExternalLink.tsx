@@ -10,6 +10,7 @@ const StyledExternalLink = styled.a`
         transform: translate(.6rem, .3rem);
         transition: all .2s;
         opacity: 0;
+        fill: ${colors.text};
 
         @media(max-width: ${sizes.breakpoints.md}) {
             opacity: 1;
