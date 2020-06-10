@@ -18,7 +18,7 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
     justify-content: space-between;
             
     &:not(:last-child) {
-        margin-bottom: 10rem;
+        margin-bottom: 14rem;
     }
     
     @media(min-width: 881px) {
@@ -89,9 +89,22 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
         flexDirectionColumnForImgContainer ? '' : 'center'
     };;
         width: 100%;
-        
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: url(${Pattern});
+            background-size: cover;
+            background-repeat: repeat;
+            z-index: -1;
+            opacity: .1;
+        }
+
         @media(min-width: 881px) {
-            position: relative;
             padding-right: ${({ direction }) => (direction === 'right') ? '8rem' : ''};
             padding-left: ${({ direction }) => !(direction === 'right') ? '8rem' : ''};
             min-height: 520px;
@@ -99,23 +112,28 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
             flex: 0 0 52%;
 
             &::before {
-                content: "";
-                position: absolute;
-                right: ${({ direction }) => !(direction === 'right') ? '' : 0};
                 left: ${({ direction }) => (direction === 'right') ? '' : 0};
-                display: block;
-                width: 55vw;
-                height: 100%;
-                background: url(${Pattern});
-                background-size: cover;
-                background-repeat: repeat;
-                z-index: -1;
-                opacity: .1;
+                right: ${({ direction }) => !(direction === 'right') ? '' : 0};
+                width: 60vw;
             }
         }
 
         @media(max-width: 880px) {
-            margin-bottom: 5rem;
+            padding: 5rem;
+            margin-bottom: 2.5rem;
+
+            &::before {
+                left: 0;
+                right: 0;
+            }
+        }
+
+        @media(max-width: 560px) {
+            padding: 3rem;
+        }
+
+        @media(max-width: 450px) {
+            padding: 2rem;
         }
     }
 
@@ -132,7 +150,9 @@ const Styled = styled.div<{ direction?: string, flexDirectionColumnForImgContain
     }
 
     .in-view::before {
-        animation: ${({ direction }) => direction === 'right' ? 'slideInLeft' : 'slideInRight'} 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1 normal forwards;
+       @media(min-width: 881px) {
+            animation: ${({ direction }) => direction === 'right' ? 'slideInLeft' : 'slideInRight'} 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1 normal forwards;
+       }
     }
 
     .buttons {
